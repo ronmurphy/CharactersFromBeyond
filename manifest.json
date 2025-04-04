@@ -2,7 +2,7 @@
   "name": "Characters from Beyond",
   "version": "1.0.0",
   "description": "View character sheets with improved positioning and controls",
-  "author": "Custom Extension",
+  "author": "Ron Murphy",
   "icon": "img/icon.svg",
   "manifest_version": 1,
   "action": {
