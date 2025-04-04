@@ -12,8 +12,5 @@
     "height": 600,
     "width": 400
   },
-  "background": {
-    "scripts": ["main.js"]
-  },
   "permissions": ["READ_ITEMS", "UPDATE_ITEMS"]
 }
