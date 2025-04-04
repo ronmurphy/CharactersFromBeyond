@@ -1,0 +1,19 @@
+{
+  "name": "Improved Sheet Viewer",
+  "version": "1.0.0",
+  "description": "View character sheets with improved positioning and controls",
+  "author": "Custom Extension",
+  "icon": "/img/icon.svg",
+  "manifest_version": 1,
+  "action": {
+    "title": "Improved Sheet Viewer",
+    "icon": "/img/icon.svg",
+    "popover": "/index.html",
+    "height": 600,
+    "width": 400
+  },
+  "background": {
+    "scripts": ["main.js"]
+  },
+  "permissions": ["READ_ITEMS", "UPDATE_ITEMS"]
+}

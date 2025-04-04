@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improved Sheet Viewer Settings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .feature-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    
+    .settings-section {
+      margin-bottom: 2rem;
+    }
+    
+    .badge-recommended {
+      margin-left: 0.5rem;
+    }
+    
+    .feature-list {
+      margin-top: 1rem;
+    }
+    
+    .version-info {
+      font-size: 0.8rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4" id="settingsContainer">
+    <h1>Settings</h1>
+    
+    <!-- Display Mode Section -->
+    <div class="card mb-3 settings-section">
+      <div class="card-body">
+        <h5 class="card-title">Display Mode</h5>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="displayMode" id="popupMode" value="popup">
+          <label class="form-check-label" for="popupMode">Popup Window</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="displayMode" id="popoverMode" value="popover">
+          <label class="form-check-label" for="popoverMode">Popover</label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Popover Options Section (shown only when popover mode is selected) -->
+    <div id="popoverOptions" class="settings-section">
+      <!-- Popover Size -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Popover Size</h5>
+          <div class="mb-3">
+            <label for="popoverHeight" class="form-label">Height (px)</label>
+            <input type="number" class="form-control" id="popoverHeight" min="200" max="2000">
+          </div>
+          <div class="mb-3">
+            <label for="popoverWidth" class="form-label">Width (px)</label>
+            <input type="number" class="form-control" id="popoverWidth" min="200" max="2000">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dock Position -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Default Position</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dockPosition" id="positionFloating" value="floating">
+            <label class="form-check-label" for="positionFloating">
+              Floating (draggable)
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dockPosition" id="positionLeft" value="left">
+            <label class="form-check-label" for="positionLeft">
+              Dock to Left
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dockPosition" id="positionRight" value="right">
+            <label class="form-check-label" for="positionRight">
+              Dock to Right
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Display Mode Explanations -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          Popup Window 
+          <span class="badge bg-secondary badge-recommended">Recommended</span>
+        </h5>
+        <p class="card-text">
+          In this mode, the character sheet will be displayed in a new browser window. 
+          Even though this is less integrated with Owlbear Rodeo, the new window will 
+          have access to the current browser session, which means that you won't need to 
+          login every time, and also won't have issues with sites blocking the page from 
+          being loaded.
+        </p>
+      </div>
+    </div>
+    
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Popover</h5>
+        <p class="card-text">
+          In this mode, the character sheet will be displayed inside Owlbear Rodeo's scene. 
+          The usability is better, especially with the new features:
+        </p>
+        <ul class="feature-list">
+          <li>Dock to left or right side of the screen</li>
+          <li>Drag to reposition anywhere</li>
+          <li>Collapse to just a header bar</li>
+        </ul>
+        <p class="card-text mt-3">
+          However, it has the following limitations:
+        </p>
+        <ul>
+          <li class="mb-2">
+            It won't have access to the current browser session. Therefore, you will 
+            need to accept cookies, login, etc. every time the sheet is displayed
+          </li>
+          <li class="mb-2">
+            For <strong>D&D Beyond</strong>, the best option is to mark the character sheet 
+            as public and it should load without needing to login
+          </li>
+          <li class="mb-2">
+            Some sites will block the page from being loaded, such as <strong>Google Drive</strong> 
+            and <strong>Dropbox</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <p class="text-secondary version-info">Version: 1.0.0</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
